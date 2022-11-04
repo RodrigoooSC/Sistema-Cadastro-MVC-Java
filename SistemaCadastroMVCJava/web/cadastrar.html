@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <title>CRU MVC - Cadastro</title>
+        <title>CRUD MVC - Cadastro</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -63,33 +63,25 @@
         <div class="container">            
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class="panel-title h1">Novo Cadastro</h3>
-                </div>
-                <div class="panel-body">
-                    <form name="form_mvc" class="form-horizontal" action="Controle" method="post">
-                        <fieldset>
-                            <div class="form-group">
-                                <label for="inputNome" class="col-lg-2 control-label">Nome</label>
-                                <div class="col-lg-10">
-                                    <input type="text" class="form-control" id="inputNome" name="nome" placeholder="Digite seu nome" value="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputTelefone" class="col-lg-2 control-label">Telefone</label>
-                                <div class="col-lg-10">
-                                    <input type="text" class="form-control" id="inputTelefone" name="telefone" placeholder="Digite seu telefone" value="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-lg-6 col-lg-offset-2">
-                                    <button type="submit" name="acao" class="btn btn-primary" value="cadastrar">Cadastrar</button>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </form>        
+                    <h3 class="panel-title h3">Novo Cadastro</h3>
+                </div>                
+                    <form name="forma_mvc" action="Controle" method="post">
+                        <div class="form-group">
+                            <label for="exampleInputName">Nome Completo</label>
+                            <input type="text" class="form-control" id="inputName" placeholder="Seu nome completo">
+                            <small id="textHelp" class="form-text text-muted">Nunca vamos compartilhar seus dados, com ninguém.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputTelefone">Telefone</label>
+                            <input type="tel" class="form-control" id="inputTelefone" placeholder="(11)00000-0000">
+                        </div>
+                        <div class="form-group form-check mb-2">
+                            <input type="checkbox" class="form-check-input" id="checkEstrangeiro">
+                            <label class="form-check-label">Estrangeiro</label>
+                        </div>
+                        <button type="submit" name="acao" class="btn btn-primary" value="cadastrar">Cadastrar</button>
+                    </form>
                 </div>      
-            </div>                
-        </div>
-
+            </div>
     </body>
 </html>

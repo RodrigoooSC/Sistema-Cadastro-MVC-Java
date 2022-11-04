@@ -1,3 +1,6 @@
+%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="bean.Pessoa"%>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -21,11 +24,11 @@
         <!-- 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
         -->
     </head>
-    <body>        
-        <!-- Menu de navegaÃ§Ã£o fixo no topo -->
+    <body>
+        <!-- Menu de navegação fixo no topo -->
         <nav class="navbar navbar-expand-lg bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand text-light" href="index.html">CRUD MVC JSP</a>
@@ -49,27 +52,52 @@
                 </div>
             </div>
         </nav>
-
-        <!-- Tela inicial -->
-        <div class="container">            
-            <div class="panel panel-primary mt-5">
+ 
+        <!-- Painel do cadastro -->
+        <div class="container col-md-6 col-md-offset-3">
+            <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h4 class="panel-title h1">What is Lorem Ipsum?</h4>
+                    <h3 class="panel-title h1">Edição do Registro</h3>
                 </div>
-                <div class="panel-body text-justify">                    
-                    
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                        industry. Lorem Ipsum has been the industry's standard dummy text
-                        ever since the 1500s, when an unknown printer took a galley of type
-                        and scrambled it to make a type specimen book. It has survived not 
-                        only five centuries, but also the leap into electronic typesetting, 
-                        remaining essentially unchanged. It was popularised in the 1960s with
-                        the release of Letraset sheets containing Lorem Ipsum passages, and 
-                        more recently with desktop publishing software like Aldus PageMaker 
-                        including versions of Lorem Ipsum.</p>
-                </div>
-            </div>
+                <div class="panel-body">
+                    <form name="form_mvc" class="form-horizontal" action="Controle" method="post">
+                        <%
+                            /**
+                             * Cria uma lista para receber os registros do
+                             * atributo listaPessoas originado do servlet
+                             * Controle
+                             */
+                            List<Pessoa> pessoa = (ArrayList) request.getAttribute("listaPessoas");
+ 
+                            // Percorre a lista dos registros e apresenta no navegador
+                            for (Pessoa p : pessoa) {
+                        %>                              
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="inputNome" class="col-lg-2 control-label">Nome</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="inputNome" name="nome" placeholder="Digite seu nome" value="<%=p.getNome()%>">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputTelefone" class="col-lg-2 control-label">Telefone</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="inputTelefone" name="telefone" placeholder="Digite seu telefone" value="<%=p.getTelefone()%>">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-6 col-lg-offset-2">
+                                    <button type="submit" name="acao" class="btn btn-primary" value="alterar">Salvar</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <input type="hidden" name="id" value="<%=p.getId()%>">
+                        <%
+                            } // Fim do laço de repetição
+                        %>                        
+                    </form>        
+                </div>      
+            </div>                
         </div>
-
     </body>
 </html>

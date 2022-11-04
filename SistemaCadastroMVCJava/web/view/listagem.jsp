@@ -1,3 +1,7 @@
+<%@page import="java.util.List"%>
+<%@page import="bean.Pessoa"%>
+<%@page import="java.util.ArrayList"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -21,10 +25,10 @@
         <!-- 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
         -->
     </head>
-    <body>        
+    <body>
         <!-- Menu de navegação fixo no topo -->
         <nav class="navbar navbar-expand-lg bg-dark">
             <div class="container-fluid">
@@ -49,27 +53,52 @@
                 </div>
             </div>
         </nav>
-
-        <!-- Tela inicial -->
-        <div class="container">            
-            <div class="panel panel-primary mt-5">
-                <div class="panel-heading">
-                    <h4 class="panel-title h1">What is Lorem Ipsum?</h4>
-                </div>
-                <div class="panel-body text-justify">                    
-                    
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                        industry. Lorem Ipsum has been the industry's standard dummy text
-                        ever since the 1500s, when an unknown printer took a galley of type
-                        and scrambled it to make a type specimen book. It has survived not 
-                        only five centuries, but also the leap into electronic typesetting, 
-                        remaining essentially unchanged. It was popularised in the 1960s with
-                        the release of Letraset sheets containing Lorem Ipsum passages, and 
-                        more recently with desktop publishing software like Aldus PageMaker 
-                        including versions of Lorem Ipsum.</p>
+        
+        
+        <div class="container col-md-8 col-md-offset-2">
+            <div class="table-responsive">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h2 class="panel-title h1">Pessoas Cadastradas</h2>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nome</th>
+                                    <th>Telefone</th>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>                     
+                                <%
+                                    /**
+                                     * Cria uma lista para receber os registros
+                                     * do atributo listaPessoas originado do
+                                     * servlet Controle
+                                     */
+                                    List<Pessoa> pessoas = (ArrayList) request.getAttribute("listaPessoas");
+ 
+                                    // Percorre a lista dos registros e apresenta no navegador
+                                    for (Pessoa p : pessoas) {
+                                %>
+ 
+                                <tr>
+                                    <td><%=p.getId()%></td>
+                                    <td><%=p.getNome()%></td>
+                                    <td><%=p.getTelefone()%></td>
+                                    <td><a href="Controle?acao=editar&id=<%=p.getId()%>"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>&nbsp;Editar</a></td>
+                                    <td><a href="Controle?acao=excluir&id=<%=p.getId()%>"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>&nbsp;Excluir</a></td>
+                                </tr>
+                                <%
+                                    } // Fim do laço de repetição
+                                %>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
-
     </body>
 </html>
