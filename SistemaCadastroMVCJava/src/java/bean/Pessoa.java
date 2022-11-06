@@ -16,6 +16,7 @@ public class Pessoa implements Serializable {
     private int id;
     private String nome;
     private String telefone;
+    private Date dataCadastro;
 
     // Método construtor
     public Pessoa() {
@@ -44,6 +45,14 @@ public class Pessoa implements Serializable {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+    
+    public Date getDataCadastro() {
+        return dataCadastro;
+    }
+
+    public void setDataCadastro(Date dataCadastro) {
+        this.dataCadastro = dataCadastro;
     }
     
     

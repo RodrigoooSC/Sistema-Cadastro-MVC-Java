@@ -47,7 +47,7 @@
         </nav>
         <!-- Painel de listagem -->
         <div class="col d-flex justify-content-center mt-5">
-            <div class="card w-75" style="width: 18rem;">
+            <div class="card">
                 <h5 class="card-header text-white bg-dark">Pessoas cadastradas</h5>   
                 <div class="card-body"> 
                     <table class="table table-striped table-hover">
@@ -56,6 +56,7 @@
                                     <th>ID</th>
                                     <th>Nome</th>
                                     <th>Telefone</th>
+                                    <th>Cadastro</th>
                                     <th>&nbsp;</th>
                                     <th>&nbsp;</th>
                                 </tr>
@@ -66,7 +67,8 @@
                                      * Cria uma lista para receber os registros
                                      * do atributo listaPessoas originado do
                                      * servlet Controle
-                                     */
+                                     */                                    
+
                                     List<Pessoa> pessoas = (ArrayList) request.getAttribute("listaPessoas");
 
                                     // Percorre a lista dos registros e apresenta no navegador
@@ -76,7 +78,8 @@
                                 <tr>
                                     <td><%=p.getId()%></td>
                                     <td><%=p.getNome()%></td>
-                                    <td><%=p.getTelefone()%></td>
+                                    <td><%=p.getTelefone()%></td>                                    
+                                    <td><%=p.getDataCadastro()%></td>
                                     <td><a href="Controle?acao=editar&id=<%=p.getId()%>"><button type="button" class="btn btn-outline-primary btn-sm">&nbsp;Editar</button></a></td>
                                     <td><a href="Controle?acao=excluir&id=<%=p.getId()%>"><button type="button" class="btn btn-outline-danger btn-sm">&nbsp;Excluir</button></a></td>
                                 </tr>

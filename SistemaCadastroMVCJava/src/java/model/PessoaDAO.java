@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import utils.ConnectionFactory;
 
@@ -231,6 +232,8 @@ public class PessoaDAO {
                     p.setId(rs.getInt("id"));
                     p.setNome(rs.getString("nome"));
                     p.setTelefone(rs.getString("telefone"));
+                    p.setDataCadastro(rs.getDate("dataCadastro"));
+
 
                     // Adiciona o objeto Pessoa na lista de pessoas
                     lstPessoas.add(p);
@@ -276,6 +279,8 @@ public class PessoaDAO {
                 p.setId(rs.getInt("id"));
                 p.setNome(rs.getString("nome"));
                 p.setTelefone(rs.getString("telefone"));
+                p.setDataCadastro(rs.getDate("dataCadastro"));
+
 
                 // Adiciona o objeto Pessoa na lista de pessoas
                 lstPessoas.add(p);
