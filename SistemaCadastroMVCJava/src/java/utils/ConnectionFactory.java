@@ -1,25 +1,24 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/**
+ * utils/ConnectionFactory.java
  */
 package utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
- 
+
 /**
  * Classe de conexão (fábrica de conexões)
  */
 public class ConnectionFactory {
- 
+
     // variáveis para a conexão
     private final String driver = "com.mysql.jdbc.Driver";
     private final String url = "jdbc:mysql://localhost:3306/exemplo_mvc_crud_jdbc";
     private final String usuario = "root";
     private final String senha = "353@Tp12";
     private static ConnectionFactory connectionFactory = null;
- 
+
     /**
      * Método construtor da classe
      * @throws SQLException 
@@ -32,7 +31,7 @@ public class ConnectionFactory {
             throw new SQLException("driver");
         }
     }
- 
+
     /**
      * Método que retorna uma conexão com o banco de dado
      * @return
@@ -41,17 +40,17 @@ public class ConnectionFactory {
     public Connection getConnection() throws SQLException {
         // Variável para receber a conexão
         Connection conn = null;
- 
+
         try {
             conn = DriverManager.getConnection(url, usuario, senha);
         } catch (SQLException e) {
             throw new SQLException(String.valueOf(e.getMessage()));
         }
- 
+
         // Retorna uma conexão caso ocorra sucesso
         return conn;
     }
- 
+
     /**
      * Método que retorna uma instância da conexão
      * @return
