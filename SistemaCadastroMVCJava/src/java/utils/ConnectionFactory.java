@@ -16,7 +16,7 @@ public class ConnectionFactory {
     private final String driver = "com.mysql.jdbc.Driver";
     private final String url = "jdbc:mysql://localhost:3306/exemplo_mvc_crud_jdbc";
     private final String usuario = "root";
-    private final String senha = "353@Tp12";
+    private final String senha = "senhabancodedados";
     private static ConnectionFactory connectionFactory = null;
 
     /**
