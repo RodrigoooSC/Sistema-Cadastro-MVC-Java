@@ -2,7 +2,7 @@
 Fala pessoal, tudo bem?🖖🏽 Esse projeto foi desenvolvido durante as aulas da faculdade no módulo - PROGRAMAÇÃO DE PORTAIS CORPORATIVOS.
 
 ## # Sobre o projeto 📚
-Esse pequena projeto visa o desenvolvimento de uma aplicação de Cadastro de Pessoas no padrão MVC com conexão ao banco de dados MySQL utilizando a JDBC.
+Esse pequeno projeto visa o desenvolvimento de uma aplicação de Cadastro de Pessoas no padrão MVC com conexão ao banco de dados MySQL utilizando a JDBC.
 Nesta aplicação foi implementada a validação dos dados utilizando os próprios recursos do framework.
 
 Para o desenvolvimento do projeto foi utilizada a IDE <a href="https://netbeans.apache.org/download/index.html">Apache NetBeans 15</a>, o JDK versão(<a href="https://www.oracle.com/br/java/technologies/javase/jdk11-archive-downloads.html" target="_blank">11.0.16</a>), o framework  web Bootstrap(<a href="https://getbootstrap.com/docs/4.6/getting-started/introduction/" target="_blank">v4.6.2</a>), para formatação da máscara de telefone foi utilizado o plug-in <a href="https://igorescobar.github.io/jQuery-Mask-Plugin/" target="_blank">jQuery Mask Plugin</a>, o conector do banco de dados <a href="https://dev.mysql.com/downloads/connector/odbc/" target="_blank">MySQL 8.0.31</a> e o servidor <a href="https://tomcat.apache.org/download-10.cgi">Apache Tomcat 10</a>.
